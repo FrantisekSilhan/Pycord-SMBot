@@ -5,7 +5,7 @@ import asyncio
 from dotenv import load_dotenv
 load_dotenv()
 
-statusy = ["Šilhán, základní deska!", "{} zmatený"]
+statusy = ["Šilhán, základní deska!", "{} zmatených"]
 
 intents = discord.Intents().all()
 client = commands.Bot(intents = intents, activity=discord.Game(name=statusy[0], status=discord.Status.idle))
