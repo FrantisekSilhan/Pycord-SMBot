@@ -10,21 +10,19 @@ class MessageCog(commands.Cog):
   async def on_message(self, message):
     if self.client.user == message.author:
       return
-    messageContent = unidecode(message.content.lower()).replace("?", " ").replace("!", " ").replace(".", " ").replace(",", " ").split(" ")
-    spis = False
-    vole = False
-    for i in messageContent:
-      if i == "spis":
-        spis = True
-      elif i == "vole":
-        vole = True
+    
+    normalized_content = unidecode.unidecode(message.content.lower())
+    cleaned_content = normalized_content.translate(str.maketrans("?.!,", "    "))
+    words = cleaned_content.split(" ")
 
-    if spis and vole:
-      await message.reply("nespim spoluvole")
-    elif spis:
-      await message.reply("nespim")
-    elif vole:
-      await message.reply("spoluvole")
+    reply = ""
+    if "spis" in words:
+      reply += "nespim "
+    if "vole" in words:
+      reply += "spoluvole "
+    if reply:
+      await message.reply(reply)
+
 
 def setup(client):
   client.add_cog(MessageCog(client))
