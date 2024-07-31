@@ -11,7 +11,7 @@ class MessageCog(commands.Cog):
     if self.client.user == message.author:
       return
     
-    normalized_content = unidecode.unidecode(message.content.lower())
+    normalized_content = unidecode(message.content.lower())
     cleaned_content = normalized_content.translate(str.maketrans("?.!,", "    "))
     words = cleaned_content.split(" ")
 
