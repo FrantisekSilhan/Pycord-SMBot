@@ -7,7 +7,7 @@ class ContextMenuCog(commands.Cog):
   def __init__(self, client):
     self.client = client
 
-  @commands.message_command(name="Zmatenej")
+  @commands.message_command(name="Zmatenej", integration_types={discord.IntegrationType.guild_install,discord.IntegrationType.user_install})
   async def zmatenej(self, ctx, message: discord.Message):
     with open("zmateny.txt", "r") as f:
       zmateny = int(f.read())+1
@@ -16,7 +16,7 @@ class ContextMenuCog(commands.Cog):
     await ctx.respond(f"Počet zmatených: {zmateny}", ephemeral = True)
     await message.reply("Seš zmatenej, co?")
 
-  @commands.message_command(name="Proč?")
+  @commands.message_command(name="Proč?", integration_types={discord.IntegrationType.guild_install,discord.IntegrationType.user_install})
   async def proc(self, ctx, message: discord.Message):
     await ctx.respond("Strýček Mach se otázal", ephemeral = True)
     await message.reply("Proč?")
