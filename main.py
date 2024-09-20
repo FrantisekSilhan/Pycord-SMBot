@@ -22,7 +22,7 @@ async def change_status():
 
         await client.change_presence(activity=discord.Activity(name=status, type=discord.ActivityType.watching))
     else:
-        await client.change_presence(status=discord.Status.online, activity=discord.Game(name=status))
+        await client.change_presence(activity=discord.Activity(state=status, type=discord.ActivityType.custom))
     change_status.counter = (change_status.counter + 1) % len(statusy)
 
 change_status.counter = 1
