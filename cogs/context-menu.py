@@ -9,6 +9,13 @@ class ContextMenuCog(commands.Cog):
 
   @commands.message_command(name="Zmatenej", integration_types={discord.IntegrationType.guild_install,discord.IntegrationType.user_install})
   async def zmatenej(self, ctx, message: discord.Message):
+    try:
+      with open("zmateny.txt", "r") as f:
+        pass
+    except FileNotFoundError:
+      with open("zmateny.txt", "w") as f:
+        f.write("1")
+    
     with open("zmateny.txt", "r") as f:
       zmateny = int(f.read())+1
     with open("zmateny.txt", "w") as f:
