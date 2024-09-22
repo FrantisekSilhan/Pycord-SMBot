@@ -16,6 +16,13 @@ async def change_status():
     status = statusy[change_status.counter % len(statusy)]
 
     if "{}" in status:
+        try:
+            with open("zmateny.txt", "r") as f:
+                pass
+        except FileNotFoundError:
+            with open("zmateny.txt", "w") as f:
+                f.write("0")
+
         with open("zmateny.txt", "r") as f:
             zmateny = f.read()
         status = status.format(zmateny)
