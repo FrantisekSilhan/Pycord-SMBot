@@ -5,10 +5,14 @@ from unidecode import unidecode
 class MessageCog(commands.Cog):
   def __init__(self, client):
     self.client = client
+    self.ignored_channels = ["1032556298904031272"]
 
   @commands.Cog.listener()
   async def on_message(self, message):
     if self.client.user == message.author:
+      return
+    
+    if message.channel.id in self.ignored_channels:
       return
     
     normalized_content = unidecode(message.content.lower())
