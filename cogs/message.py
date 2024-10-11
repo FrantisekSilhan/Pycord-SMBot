@@ -5,7 +5,7 @@ from unidecode import unidecode
 class MessageCog(commands.Cog):
   def __init__(self, client):
     self.client = client
-    self.ignored_channels = ["1032556298904031272"]
+    self.ignored_channels = [1032556298904031272]
 
   @commands.Cog.listener()
   async def on_message(self, message):
