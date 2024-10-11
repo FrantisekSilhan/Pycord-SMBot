@@ -1,2 +1,5 @@
 .env
 cogs/__pycache__
+
+# python virtual environment
+SMBot/
