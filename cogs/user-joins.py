@@ -27,5 +27,15 @@ Abychom zajistili bezpečnost a soukromí školního Discord serveru, **přístu
 """
     )
 
+    guild = self.client.get_guild(984505957012873266)
+    if not guild:
+      return
+    classic_role = guild.get_role(987061951672758322)
+    herni_role = guild.get_role(987061152540426314)
+    zaliby_role = guild.get_role(1011245335680663654)
+    if not classic_role or not herni_role or not zaliby_role:
+      return
+    await member.add_roles(classic_role, herni_role, zaliby_role)
+
 def setup(client):
   client.add_cog(UserJoinsCog(client))
