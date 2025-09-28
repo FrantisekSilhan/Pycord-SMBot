@@ -13,19 +13,19 @@ class UserJoinsCog(commands.Cog):
     
     try:
       await member.send(
-  f"""
-  📢 **Pro studenty školy: Ověření a přístup na server** 📢
+f"""
+📢 **Pro studenty školy: Ověření a přístup na server** 📢
 
-  Abychom zajistili bezpečnost a soukromí školního Discord serveru, **přístup do celého serveru je omezen pouze pro studenty**. Pro získání plného přístupu je nutné ověření pomocí školního e-mailu.
-  ## 🔗 Postup:
-  - Přejdi na tento [odkaz](<https://pslib.app/>).
-  - Následuj pokyny na stránce (přihlášení přes váš školní e-mail a Discord účet).
-  - Po ověření se ti automaticky přiřadí role třídy, role "verified" a získáš přístup do školní části serveru.
+Abychom zajistili bezpečnost a soukromí školního Discord serveru, **přístup do celého serveru je omezen pouze pro studenty**. Pro získání plného přístupu je nutné ověření pomocí školního e-mailu.
+## 🔗 Postup:
+- Přejdi na tento [odkaz](<https://pslib.app/>).
+- Následuj pokyny na stránce (přihlášení přes váš školní e-mail a Discord účet).
+- Po ověření se ti automaticky přiřadí role třídy, role "verified" a získáš přístup do školní části serveru.
 
-  ❗️ **Upozornění**: Tento proces ověření je **výhradně pro studenty** školy. Pokud nejsi student a nemáš školní e-mail, nebude možné tímto způsobem získat přístup.
+❗️ **Upozornění**: Tento proces ověření je **výhradně pro studenty** školy. Pokud nejsi student a nemáš školní e-mail, nebude možné tímto způsobem získat přístup.
 
-  🔍 **Pro ostatní uživatele**: I když nemáš školní e-mail a nemůžeš získat plný přístup, stále můžeš vidět a účastnit se kategorie "**pro všechny**", kde najdeš veřejné informace a diskuse.
-  """
+🔍 **Pro ostatní uživatele**: I když nemáš školní e-mail a nemůžeš získat plný přístup, stále můžeš vidět a účastnit se kategorie "**pro všechny**", kde najdeš veřejné informace a diskuse.
+"""
       )
     except discord.Forbidden:
       pass  # User has DMs disabled
